@@ -1,0 +1,109 @@
+.RegisterComponent{
+    margin: 0px 0px 0px 100px!important;
+    display: flex;
+    justify-content: center;
+
+}
+.maps-c{
+  height: 320px;
+}
+
+.invoice {
+  display: flex;
+  justify-content: center;   
+  
+}
+
+.RegisterCard{
+    background-color: #F0F0F0 !important;
+}
+
+.homeAdmin {    
+    display: flex;
+    justify-content: center;
+}
+
+.card-style {
+  max-width: 18rem;
+}
+
+.table-fact{
+  max-width: 40rem;
+  display: flex;
+  justify-content: center;
+}
+
+
+.marker {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/684/684908.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .mapboxgl-popup {
+    max-width: 200px;
+  }
+  
+  .mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .map-container {
+    position: relative;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .sidebarStyle {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 12px;
+    background-color: #404040;
+    
+    z-index: 1 !important;
+    padding: 6px;
+    font-weight: bold;
+  }
+  
+
+@media screen and (max-width: 900px) {
+    .RegisterComponent {
+        margin: 0px 50px 0px 60px!important;/* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
+
+  .custom-file-upload {
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 5px;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+
+.custom-file-upload::file-selector-button {
+    background-color: rgb(94, 119, 230);
+    color: white;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin:auto;
+    align-self: center;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.input-archivo-banco {
+    margin-top: 60px !important;
+    margin-bottom: 60px !important;
+}
+
