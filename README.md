@@ -11,27 +11,13 @@ Esta app puede ser útil para empresas de energía eléctrica pero además puede
 
 ### Flujo de trabajo Git
 
-En el equipo se utiliza un flujo de trabajo derivado de Gitflow, donde en lugar de una única rama, contamos con 3 ramas principales para registrar el historial del proyecto:
+En el equipo se utiliza el flujo de trabajo Git Trunk, donde se cuenta con una única rama principal denomida main para registrar el historial del proyecto:
 
 - main (Producción)
-- testing (Pruebas de calidad)
-- development (Desarrollo)
 
-En primer lugar se cuenta con la rama **_main_** la cual estará publicada en un servidor para uso de los usuarios en producción y a partir de ella se derivan las ramas *HotFix* para la resolución de errores en producción. En segundo lugar, contamos con la rama **_testing_** la cual contará con todos los cambios estables, listos para ser publicados y sirve para probar la calidad de los desarrollos sin que se agreguen nuevos, es poreso que de esta rama se derivan ramas *bugfix* orientadas a la corrección de errores de calidad, y otras orientadas a la publicación. Por último, se tiene la rama **_development_**, de la cual se derivaran todas aquellas ramas *features* corresnpodientes a los nuevos desarrollos que se incorporarán al proyecto.
+Con este flujo, o mejor llamado estrategía, todo el equipo colabora he integra directamente (hace push), siguiendo estas consideraciones:
 
-Tanto **testing** como **development** no cuentan con un servidor dedicado, sino que son ejecutados de forma local (localhost).
-
-
-### El flujo general es el siguiente:
-
-1. Se crea una rama **development** a partir de **main**.
-    - Cada nuevo desarrollo (**_feature_**) se crea a partir de **development**
-    - Cuando se termina una rama feature, se fusiona en la rama development.
-
-2. Se crea una rama **testing** a partir de **development**.
-    - si se detecta un problema en testing, se crea una rama **bugfix** a partir de **testing**.
-    - Una vez terminada la rama **bugfix**, esta se fusiona tanto en developmen como en testing.
-    - Cuando la rama testing está lista, se fusiona en las ramas development y main.
-
-3. Si se detecta un problema en main, se crea una rama **hotfix** a partir de **main**.
-    - Una vez terminada la rama hotfix, esta se fusiona tanto en developmen como en main y testing.
+- No existen branches de larga duración. 
+- Se debe hacer commit al menos una vez al día (esto no significa que vamos integrar cualquier código solo por hacer commit, el siguiente punto lo explica mejor). Esto lo que busca es eliminar la distancia entre los desarrolladores cuando se empieza a codear cosas nuevas.
+- Todo lo que se le haga commit es código funcional, esto implica que se cumpla la definición de hecho (definition of done), se hayan creado las pruebas necesarias y todo lo que sea requerido para asegurarse que el código no esta introduciendo un bug 🐛. Esto significa que el equipo debe de tener un grado de madurez y responsabilidad alto al momento de entregar el código.
+- El trunk siempre debe encontrarse en un estado verde y optimo con esto quiero decir listo para hacerle release.
