@@ -29,7 +29,7 @@ const Factura = () =>{
             try{
                 const dateLastYear = '2022-01-01'
                 const dateYear = '2023-01-27'                
-                const response = await fetchWithoutToken(`reportes/clientes/informacion_financiera/?contratos=${values.ContractID}`);
+                const response = await fetchWithToken(`reportes/clientes/informacion_financiera/?contratos=${values.ContractID}`);
                 const body = await response.json(); 
                 setData(body)            
                 setState(true)

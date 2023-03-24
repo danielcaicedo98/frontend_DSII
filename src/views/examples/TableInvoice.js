@@ -15,7 +15,7 @@ export const TableInvoice =({state,data})=>{
 
 
     axios({
-      url: `https://api-nrgx.tortascrispan.com/facturas/${id}/descargar/`,
+      url: `http://localhost:8000/facturas/${id}/descargar/`,
       method: "GET",
       responseType: "blob", // importante
       onDownloadProgress: (progressEvent) => {
