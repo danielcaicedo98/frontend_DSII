@@ -90,7 +90,13 @@ const AdminNavbar = () => {
                   <i className="fa fa-search" /> 
                   <span className="nav-link-inner--text">Consultar Factura</span>
                 </NavLink>
-              </NavItem>              
+              </NavItem>
+              <NavItem>
+                <NavLink className="nav-link-icon" to="/auth/pagolinea" tag={Link}>
+                  <i className="fa fa-search" /> 
+                  <span className="nav-link-inner--text">Pago en Línea</span>
+                </NavLink>
+              </NavItem>               
             </Nav>
           </UncontrolledCollapse>
         </Container>
