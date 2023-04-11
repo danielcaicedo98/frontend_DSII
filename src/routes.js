@@ -31,6 +31,7 @@ import  MapsUser  from "views/examples/MapsUser.js";
 import Reportes from "views/examples/UserTables";
 import BankFiles from "views/examples/BankFiles";
 import { Facturacion } from "views/examples/Faturacion";
+import PagoLinea from "views/examples/PagoLinea";
 
 
 var routes = [  
@@ -98,6 +99,13 @@ var routes = [
      layout: "/auth"
    },
    {
+     path: "/pagolinea",
+     name: "Pago en Línea",
+     icon: "fa fa-search",
+     component: PagoLinea,
+     layout: "/auth"
+   },
+   {
      path: "/contrato",
      name: "Contrato",
      icon: "ni ni-building text-blue",
@@ -125,6 +133,7 @@ var routes = [
     component: Factura,
     layout: "/admin"
   }
+  
 
 ];
 export default routes;
