@@ -5,18 +5,19 @@ const PagoLinea = () => {
 
     return (
         <>
-            <div className="header p-4 bg-light text-dark">
-                <h1>
+            <div className="header p-4 bg-light text-dark rounded" alt="...">
+                <h1 class="display-3 text-dark">
                     Pago en línea (Paypal)
                 </h1>
                 <p>
                     En esta sección podrás realizar el pago de tu factura en linea a través de paypal, para ello vas a necesitar a la mano: <br />
                 </p>
-                <ol >
+                <dl>
                     <li>Cuenta Paypal</li>
                     <li>Contraseña</li>
                     <li>Fondos suficientes</li>
-                </ol>
+                </dl>
+ 
                 <p>
                     Para proceder con el pago, de click al siguiente botón:
                 </p>
