@@ -1,22 +1,34 @@
+import "assets/css/paypal-button.css"
 
 
-const PagoLinea = () =>{
+const PagoLinea = () => {
 
     return (
         <>
-        
-        <div className="header bg-light pb-8 pt-5 pt-md-8">
-           <p>
-           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-           </p>
-                
-           
-        </div>    
+            <div className="header p-4 bg-light text-dark">
+                <h1>
+                    Pago en línea (Paypal)
+                </h1>
+                <p>
+                    En esta sección podrás realizar el pago de tu factura en linea a través de paypal, para ello vas a necesitar a la mano: <br />
+                </p>
+                <ol >
+                    <li>Cuenta Paypal</li>
+                    <li>Contraseña</li>
+                    <li>Fondos suficientes</li>
+                </ol>
+                <p>
+                    Para proceder con el pago, de click al siguiente botón:
+                </p>
+
+                <div>
+                    <a className="paypal-button" type="button"><img className="h-25" width='25' src={require("../../assets/img/brand/paypal.png")}></img>Paypal</a>
+                </div>
+
+            </div>
+
         </>
-    )       
-
-
-
+    )
 }
 
 export default PagoLinea;
