@@ -32,7 +32,7 @@ import {
   Col
 } from "reactstrap";
 
-import { useState} from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { startLogin } from "actions/auth";
 
@@ -40,32 +40,33 @@ import { loading } from "notifications/notification";
 
 import { resolveModuleName } from "typescript";
 import Loader from "notifications/Loader";
-
+import ReCAPTCHA from "react-google-recaptcha";
 
 
 const Login = () => {
 
-  const [values , setValues] = useState({
+  const [values, setValues] = useState({
     email: '',
     password: '',
   })
 
-  const [state,setState] = useState(null)
+  const [state, setState] = useState(null)
 
   const dispatch = useDispatch();
 
 
   const loginChange = (e) => {
-    setValues({...values, [e.target.name] : e.target.value      
+    setValues({
+      ...values, [e.target.name]: e.target.value
     })
   }
 
   const loginSubmit = async (e) => {
-    e.preventDefault();  
+    e.preventDefault();
 
 
-   // dispatch(startLogin( values.email , values.password ) )
-    let response = dispatch(startLogin( values.email , values.password ))        
+    // dispatch(startLogin( values.email , values.password ) )
+    let response = dispatch(startLogin(values.email, values.password))
     setState(!!response)
 
   }
@@ -75,19 +76,19 @@ const Login = () => {
       <Col lg="5" md="7">
         <Card className="bg-secondary shadow border-0">
           <CardHeader className="bg-transparent pb-5">
-          { state === null ?  <></>:<Loader />
-          }
-          
-          
-          
-          
+            {state === null ? <></> : <Loader />
+            }
 
-          
-         
 
-          
-            
-  {/*
+
+
+
+
+
+
+
+
+            {/*
                 <div className="text-muted text-center mt-2 mb-3">
               <small>Ingresa con</small>
             </div>
@@ -129,9 +130,9 @@ const Login = () => {
             </div>
 
   */}
-          
+
           </CardHeader>
-          
+
           <CardBody className="px-lg-5 py-lg-5">
             <div className="text-center text-muted mb-4">
               <small>Ingresa con tus credenciales</small>
@@ -145,12 +146,12 @@ const Login = () => {
                     </InputGroupText>
                   </InputGroupAddon>
                   <Input
-                    type="email" 
-                    id="mail" 
-                   className="form-control" 
-                   name="email" 
-                   value={values.email}
-                   onChange = {(e) => loginChange(e)}
+                    type="email"
+                    id="mail"
+                    className="form-control"
+                    name="email"
+                    value={values.email}
+                    onChange={(e) => loginChange(e)}
                   />
                 </InputGroup>
               </FormGroup>
@@ -162,21 +163,30 @@ const Login = () => {
                     </InputGroupText>
                   </InputGroupAddon>
                   <Input
-                    type="password" 
-                    id="password" 
-                    className="form-control" 
-                    name="password" 
+                    type="password"
+                    id="password"
+                    className="form-control"
+                    name="password"
                     value={values.password}
-                    onChange = {(e) => loginChange(e)}
+                    onChange={(e) => loginChange(e)}
                   />
                 </InputGroup>
-              </FormGroup>             
+              </FormGroup>
+              <FormGroup>
+                <ReCAPTCHA
+                  sitekey="6LcMj7olAAAAAEwNIJ42svPhdlJhVlfKAuvoV6yd"
+                  onChange={(value) => {
+                    setState(value);
+                  }}
+                />
+              </FormGroup>
+
               <div className="custom-control custom-control-alternative custom-checkbox">
                 <input
                   className="custom-control-input"
                   id=" customCheckLogin"
                   type="checkbox"
-                  
+
                 />
                 <label
                   className="custom-control-label"
