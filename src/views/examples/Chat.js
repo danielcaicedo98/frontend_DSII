@@ -49,7 +49,9 @@ const Chat = () => {
                 <div className='bg-white' >
                     <ul>
                         {mensajes.map ((mensaje) => (
-                                <li>{mensaje.usuario} : {mensaje.mensaje}</li>
+                                mensaje.usuario === 'ADMIN' ?
+                                <li>{mensaje.usuario} : {mensaje.mensaje}</li>:
+                                <li>TU : {mensaje.mensaje}</li>
                             ))
                         }
                     </ul>

@@ -34,40 +34,41 @@ const ChatAdmin = () => {
           usuario = 'ADMIN';
         }
         socket.emit('chat_message', {
-          usuario: 'admin',
+          usuario: 'ADMIN',
           mensaje: nuevoMensaje,
-          id: 'admin'
+          id: 'ADMIN'
         });
         setNuevoMensaje('');
       }
       
     return(
-        <div className="header bg-gradient-info pb-8 pt-5 pt-md-8 p-4">
-            <div>{isConnected ? 'CONECTADO': 'NO CONECTADO'}</div>
-            <div class="mb-3 m-4">
-                <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input 
-                    type="text" 
-                    class="form-control" 
-                    id="exampleFormControlInput1" 
-                    placeholder="name@example.com"
-                    value={nuevoMensaje}
-                    onChange={e => setNuevoMensaje(e.target.value)}
-                   ></input>
+        <div className="header bg-gradient-info pb-8 pt-5 pt-md-8 p-10">
+            {/* <div>{isConnected ? 'CONECTADO': 'NO CONECTADO'}</div> */}
+            <div class="mb-3 m-4 p-7">                
                 <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Mensajes</label>
-                <div className='bg-white' >
+                <label for="exampleFormControlTextarea1 p-7" class="form-label">Mensajes</label>
+                <div className='bg-white p-2 border rounded' >
                     <ul>
                         {mensajes.map ((mensaje) => (
-                                <li>{mensaje.usuario} : {mensaje.mensaje}</li>
+                                mensaje.usuario === 'ADMIN' ?
+                                <li>{mensaje.usuario} : {mensaje.mensaje}</li>:
+                                <li>Cliente: {mensaje.mensaje}</li>
+                                
                             ))
                         }
                     </ul>
-                </div>            
+                </div>
+                <input 
+                    type="text" 
+                    className="form-control " 
+                    id="Escribe tu mensajes" 
+                    placeholder="Escribe tu mensaje"
+                    value={nuevoMensaje}
+                    onChange={e => setNuevoMensaje(e.target.value)}
+                   ></input>            
                 </div>
                 <button className='btn bg-green'  onClick={enviarMensaje}>Enviar</button> 
-            </div>
-            <ChatBotClient />
+            </div>            
         </div>
 
     )
