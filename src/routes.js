@@ -31,7 +31,10 @@ import  MapsUser  from "views/examples/MapsUser.js";
 import Reportes from "views/examples/UserTables";
 import BankFiles from "views/examples/BankFiles";
 import { Facturacion } from "views/examples/Faturacion";
+import Chat from "views/examples/Chat";
+import ChatAdmin from "views/examples/ChatAdmin";
 import PagoLinea from "views/examples/PagoLinea";
+
 
 
 var routes = [  
@@ -131,6 +134,20 @@ var routes = [
     name: "Consultar Factura",
     icon: "fa fa-search",
     component: Factura,
+    layout: "/admin"
+  },
+  {
+    path: "/chat",
+    name: "Consultar Factura",
+    icon: "fa fa-comments",
+    component: Chat,
+    layout: "/auth"
+  },
+  {
+    path: "/chat",
+    name: "Gestionar Chat",
+    icon: "fa fa-comments",
+    component: ChatAdmin,
     layout: "/admin"
   }
   
