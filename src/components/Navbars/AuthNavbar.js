@@ -92,7 +92,6 @@ const AdminNavbar = () => {
                   <span className="nav-link-inner--text">Chat</span>
                 </NavLink>
               </NavItem>             
-              </NavItem>
               <NavItem>
                 <NavLink className="nav-link-icon" to="/auth/pagolinea" tag={Link}>
                   <i className="fa fa-credit-card" /> 
