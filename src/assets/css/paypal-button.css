@@ -1,19 +1,10 @@
 .paypal-button {
-    background: linear-gradient(to right, #bbc1c7, #2728ff);
-    background-color: #bbc1c7;
+    height: 90px;
+    width: 300px;
     color: #fff;
-    font-family: Trebuchet MS;
-    font-size: 20px;
-    font-weight: 800;
-    font-style: normal;
-    text-decoration: none;
-    padding: 10px 21px;
-    border: 0px solid #000;
-    border-radius: 17px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 2px 2px 8px #000;
+    background-image: url('../../assets/img/brand/paypal-credit-card-logo.png');
+    background-size: cover;
+    border-radius: 8px;
 }
 
 .paypal-button span {
@@ -24,11 +15,6 @@
     background-repeat: no-repeat;
     background-size: contain;
     transform: rotate(0deg);
-}
-
-.paypal-button:hover {
-    background: linear-gradient(to right, #c3c8cd, #5959ff);
-    background-color: #c3c8cd;
 }
 
 .paypal-button:active {

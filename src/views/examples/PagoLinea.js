@@ -29,12 +29,8 @@ const PagoLinea = () => {
                 </h2>
 
                 <div className="mt-4" align="center">
-                    <a className="paypal-button" type="button"><img className="h-25" width='25' src={require("../../assets/img/brand/paypal.png")}></img>Paypal</a>
+                    <a className="paypal-button" type="button"></a>
                 </div>
-
-                <footer align="center">    
-                    <img className="h-25" width='40%' src={require("../../assets/img/brand/paypal-credit-card-logo.png")}></img>
-                </footer>
 
             </div>
 
