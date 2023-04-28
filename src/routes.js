@@ -33,6 +33,8 @@ import BankFiles from "views/examples/BankFiles";
 import { Facturacion } from "views/examples/Faturacion";
 import Chat from "views/examples/Chat";
 import ChatAdmin from "views/examples/ChatAdmin";
+import PagoLinea from "views/examples/PagoLinea";
+
 
 
 var routes = [  
@@ -100,6 +102,13 @@ var routes = [
      layout: "/auth"
    },
    {
+     path: "/pagolinea",
+     name: "Pago en Línea",
+     icon: "fa fa-search",
+     component: PagoLinea,
+     layout: "/auth"
+   },
+   {
      path: "/contrato",
      name: "Contrato",
      icon: "ni ni-building text-blue",
@@ -141,6 +150,7 @@ var routes = [
     component: ChatAdmin,
     layout: "/admin"
   }
+  
 
 ];
 export default routes;

@@ -1,0 +1,22 @@
+.paypal-button {
+    height: 90px;
+    width: 300px;
+    color: #fff;
+    background-image: url('../../assets/img/brand/paypal-credit-card-logo.png');
+    background-size: cover;
+    border-radius: 8px;
+}
+
+.paypal-button span {
+    margin-right: 21px;
+    display: block;
+    width: 31px;
+    height: 31px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: rotate(0deg);
+}
+
+.paypal-button:active {
+    transform: scale(0.95);
+}

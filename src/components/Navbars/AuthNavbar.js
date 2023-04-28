@@ -40,12 +40,7 @@ const AdminNavbar = () => {
               alt="..."
               src={require("../../assets/img/brand/logo_nrgx.png")}
             />
-        </NavbarBrand> 
-                
-          
-         
-          
-          
+        </NavbarBrand>               
           <button className="navbar-toggler" id="navbar-collapse-main">
             <span className="navbar-toggler-icon" />
           </button>
@@ -97,6 +92,13 @@ const AdminNavbar = () => {
                   <span className="nav-link-inner--text">Chat</span>
                 </NavLink>
               </NavItem>             
+              </NavItem>
+              <NavItem>
+                <NavLink className="nav-link-icon" to="/auth/pagolinea" tag={Link}>
+                  <i className="fa fa-credit-card" /> 
+                  <span className="nav-link-inner--text">Pago en Línea</span>
+                </NavLink>
+              </NavItem>               
             </Nav>
           </UncontrolledCollapse>
         </Container>
