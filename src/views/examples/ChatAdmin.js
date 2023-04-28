@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
-import ChatBotClient from './ChatBot';
 const socket = io('http://localhost:3000');
 const usuario = 'admin'
 const ChatAdmin = () => {

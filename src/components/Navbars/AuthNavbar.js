@@ -93,7 +93,7 @@ const AdminNavbar = () => {
               </NavItem>   
               <NavItem>
                 <NavLink className="nav-link-icon" to="/auth/chat" tag={Link}>
-                  <i className="fa fa-search" /> 
+                  <i className="fa fa-comments" /> 
                   <span className="nav-link-inner--text">Chat</span>
                 </NavLink>
               </NavItem>             

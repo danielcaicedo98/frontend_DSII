@@ -130,14 +130,14 @@ var routes = [
   {
     path: "/chat",
     name: "Consultar Factura",
-    icon: "fa fa-search",
+    icon: "fa fa-comments",
     component: Chat,
     layout: "/auth"
   },
   {
     path: "/chat",
     name: "Gestionar Chat",
-    icon: "fa fa-search",
+    icon: "fa fa-comments",
     component: ChatAdmin,
     layout: "/admin"
   }
