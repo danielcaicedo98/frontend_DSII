@@ -1,0 +1,10 @@
+{
+    "plugins": ["complexity"],
+    "rules": {
+        "complexity": ["warn", 5]
+    },
+    "parserOptions": {
+        "ecmaVersion": 2021,
+        "sourceType": "module"
+    }
+}
