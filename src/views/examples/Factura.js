@@ -66,7 +66,7 @@ const Factura = () =>{
    
     return (
         <>
-        <div className="header bg-gradient-default pb-8 pt-5 pt-md-8">
+        <div className="header bg-gradient-info pb-5 pt-md-5 rounded">
             <Col className="invoice">
                 <Card className="bg-secondary shadow border-0">  
                     <CardBody className="bg-transparent pb-5 ">          
