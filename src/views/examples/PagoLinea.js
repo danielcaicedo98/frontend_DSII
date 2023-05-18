@@ -1,6 +1,5 @@
 import "assets/css/paypal-button.css"
 
-
 const PagoLinea = () => {
 
     return (

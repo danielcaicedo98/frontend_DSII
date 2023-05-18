@@ -49,10 +49,41 @@
     <title>NRGX</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        var userLang = localStorage.getItem('userLang');
+        new google.translate.TranslateElement({
+          pageLanguage: 'es',
+          includedLanguages: userLang,
+          layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+          autoDisplay: true,
+          gaTrack: true,
+          gaId: 'UA-12345678-1'
+        }, 'google_translate_element');
+      }
 
+      function changeLanguage(language) {
+        var translationElement = google.translate.TranslateElement.getInstance();
+        translationElement.selectLanguage(language);
+      }
+    
+      window.addEventListener('load', function() {
+        googleTranslateElementInit();
+      });
+    
+      window.addEventListener('unload', function(event) {
+        var userLang = localStorage.getItem('userLang');
+        if (userLang) {
+          localStorage.setItem('userLang', userLang);
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit&key=AIzaSyAgIVWMPeEmiIyt1QsVk-gBfvFCL7VwSY4"></script>
    </head>
   <body>
+    <div class="contain-page ">
+      <div id="google_translate_element"></div>
+
     <noscript> You need to enable JavaScript to run this app. </noscript>
     <div id="root"></div>
     <!--
@@ -66,5 +97,6 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script src='https://api.mapbox.com/mapbox-assembly/mbx/v0.18.0/assembly.js'></script>
+    
   </body>
 </html>
