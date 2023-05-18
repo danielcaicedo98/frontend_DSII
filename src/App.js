@@ -18,7 +18,8 @@
 import React from "react";
 import { BrowserRouter, Redirect, Route} from "react-router-dom";
 
-import "assets/css/styles.css"
+
+import "assets/css/styles.css";
 import "assets/plugins/nucleo/css/nucleo.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "assets/scss/argon-dashboard-react.scss";
@@ -35,6 +36,7 @@ import MapsUser from "views/examples/MapsUser";
 import Maps from "views/examples/Maps";
 
 
+
 const PrivateRoutes = () => {
     const { isAuth } = useSelector((state) => state.auth)
   
@@ -49,11 +51,7 @@ const PrivateRoutes = () => {
  function App(){
     const { isAuth } = useSelector((state) => state.auth)
 
-  //const { isAuth } = localStorage.getItem('isAut')
-    
-    
-
-   
+  //const { isAuth } = localStorage.getItem('isAut') 
   
      return(  
       <BrowserRouter>
@@ -63,5 +61,6 @@ const PrivateRoutes = () => {
           }   
       </BrowserRouter>
     );
-}
+  }
+
 export default App;
