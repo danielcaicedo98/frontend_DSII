@@ -34,10 +34,9 @@ import {
 
 import { useState} from 'react';
 import { fetchWithToken } from "api/fetch"; 
-import { parseJsonSourceFileConfigFileContent } from "typescript";
-
 
 const ModalRegister = () => {
+  const token = localStorage.getItem('token') || '';
 
   const [values , setValues] = useState({
     email: '',

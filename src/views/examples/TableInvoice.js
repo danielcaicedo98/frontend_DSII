@@ -1,5 +1,6 @@
 import { fetchWithToken } from "api/fetch"
 import axios from "axios"
+import ModalPay from "helpers/modalPay"
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { Button, CardHeader, Table } from "reactstrap"
@@ -10,6 +11,9 @@ export const TableInvoice =({state,data})=>{
 
   const [values,setValues] = useState(data)
   const token = localStorage.getItem('token') || '';
+  const path = window.location.pathname;
+  console.log(path)
+  console.log(path ===  '/admin/factura')
 
   const downInvoice = async (id) =>{  
 
@@ -52,6 +56,9 @@ export const TableInvoice =({state,data})=>{
                   <th scope="col">Valor Total</th>
                   <th scope="col">Estado Factura</th>
                   <th scope="col">Descagar Factura</th>
+                  {path ===  '/admin/factura' ? 
+                    <th scope="col">Pagar Factura</th>
+                    :<></>}
                 </tr>
               </thead>
               <tbody> 
@@ -66,6 +73,9 @@ export const TableInvoice =({state,data})=>{
                             <td>{factura.total_a_pagar}</td>
                             <td>{factura.estado.label}</td>
                             <td><Button className="btn btn-success btn-sm" onClick={() => downInvoice(factura.id)}>DESCARGAR PFD</Button></td>
+                            {path ===  '/admin/factura' ? 
+                              <td ><ModalPay ></ModalPay></td>
+                              :<></>}
                           </tr>
                         )})
                     }           
