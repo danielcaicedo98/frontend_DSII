@@ -20,7 +20,7 @@ export const startLogin = (email, password) => {
 
             // GUARDAR EN EL LOCAL STORAGE INFORMACION DE USUARIO
             dispatch(authenticateUser())
-            localStorage.setItem('isAuth','true') 
+            localStorage.setItem('isAuth','true'); 
             localStorage.setItem('token',body.token.access);
             localStorage.setItem('email',body.user.email);            
             localStorage.setItem('rol',body.user.groups);
