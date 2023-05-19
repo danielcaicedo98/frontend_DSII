@@ -16,13 +16,18 @@ import {
 
 import { useState} from 'react';
 import { fetchWithToken } from "api/fetch"; 
+import axios from "axios";
 
 
 const BankFiles = () => {
 
+  const token = localStorage.getItem('token') || '';
   const [file , setFile] = useState({
     archivo: null,
   })
+
+  const formData = new FormData();  
+  formData.append('archivo', file); 
 
   const [error, setError] = useState(null);
 
@@ -49,32 +54,34 @@ const BankFiles = () => {
     console.log(values)
   } */
 
-  const subirArchivo = async () => {
-    
-      const response = await fetchWithToken( 
-                              'users/', 
-                              { 
 
-                              }, 
-                              'POST' 
-                          );
-      if(response.ok){
-        warningUser("Registro Exitoso","","success")              
-        setTimeout(function(){
-          window.location.reload(7);
-        }, 100);
-      }else if (!response.ok){
-        warningUser("Registro Fallido",response.statusText,"error")              
-      }
+
+  const subirArchivo = async () => {
+    try {
+      const response = await axios({
+        url: 'http://localhost:8000/facturas-pagos/bancos/',
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${ token }`
+        },
+        data: formData
+      });
+      warningUser('Exito','Archivo Subido Con Exito','success')
+      setTimeout(function(){
+        window.location.reload(7);
+      }, 2000);  
+    } catch (error) {
+      console.error('La petición falló:', error);
       
-  //    console.log(values + "  " + values[0].first_name)
-  
+      warningUser('Error',Object.values(error.response.data).map(cadena => cadena.toString()),'error')
+      console.log('Detalles del error:', Object.values(error.response.data).map(cadena => cadena.toString()));
+      
+    }
   }
 
-  const onFormSubmit = async (e) =>{    
-    console.log(file)
+ const onFormSubmit = async (e) =>{    
     e.preventDefault()
-    //subirArchivo()
+    subirArchivo()  
   }
 
 
