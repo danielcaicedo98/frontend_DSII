@@ -14,7 +14,7 @@ class Slider extends React.Component {
           <div className="carousel-item active">
             <img
               className="img-fluid"
-              src="https://www.gob.mx/cms/uploads/article/main_image/11822/Energ_a_solar.jpg"
+              src="https://gruposolinc.com/wp-content/uploads/2018/12/Energia-solar-aprovechada-por-paneles-solares.jpg"
             />
             
           </div>

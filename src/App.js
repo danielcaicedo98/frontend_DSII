@@ -57,7 +57,7 @@ const PrivateRoutes = () => {
       <BrowserRouter>
           <Route path="/auth" render={(props) => <AuthLayout {...props} />} />                    
           {
-            isAuth ? <Route  path="/admin" component={AdminLayout}/> : <Redirect to='/auth/home' />
+            isAuth ? <Route  path="/admin" component={AdminLayout}/> : <Redirect to='/auth/login' />
           }   
       </BrowserRouter>
     );
